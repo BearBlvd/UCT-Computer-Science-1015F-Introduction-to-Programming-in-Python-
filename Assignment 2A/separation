@@ -1,0 +1,34 @@
+#OYAMA NONGCULA
+#NNGOYA001
+#2025/03/06
+#Question 1
+import math 
+
+#collecting input
+air_craft_x=float(input("Enter the aircraft x coordinate (km):\n"))
+air_craft_y=float(input("Enter the aircraft y coordinate (km):\n"))
+air_craft_height=float(input("Enter the aircraft height (m):\n"))
+
+obs_x=float(input("Enter the obstacle x coordinate (km):\n"))
+obs_y=float(input("Enter the obstacle y coordinate (km):\n"))
+obs_height=float(input("Enter the obstacle height (m):\n"))
+
+# calculating virtical sepaeration
+vert_sep=abs(air_craft_height-obs_height)
+##FIX THIS
+hori_sep=math.sqrt((air_craft_x)**2-(obs_x)**2+(air_craft_y)**2-(obs_y)**2)
+
+if vert_sep<300 and hori_sep<9.3:
+    
+    print(f"Horizontal separation: {round(vert_sep,3)} kilometers.")
+    print(f"Vertical separation: {round(hori_sep,3)} metres.")
+    print("Yoh-yoh-yoh! Too close! Too close! Do something!.")
+    
+elif vert_sep>300 and hori_sep<9.3:
+    print(f"Horizontal separation: {round(vert_sep,3)} kilometers.")
+    print(f"Vertical separation: {round(hori_sep,3)} metres.")    
+    print("Too close, change altitude!")
+else:
+    print(f"Horizontal separation: {round(vert_sep,3)} kilometers.")
+    print(f"Vertical separation: {round(hori_sep,3)} metres.")    
+    print("All good, it’s a safe distance.")
