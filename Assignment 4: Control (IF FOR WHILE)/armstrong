@@ -1,0 +1,25 @@
+#Oyama Nongcula
+#NNGOYA001
+#13/03/2025
+
+Number=input("Enter a number:\n")
+#Validating input
+try:
+    i_number=int(Number)
+except Exception:
+    print(f"Invalid input. Please enter a valid integer.")
+    exit()
+
+digits=[]
+#extracting digits from number
+for i in Number:
+    digits.append(int(i))
+#Calculating cube sum 
+digit_sum=0
+for digit in digits:
+    digit_sum=digit_sum+digit**len(digits)
+#Determining if it is an Armstrong Number
+if digit_sum==int(Number):
+    print(f"{Number} is an Armstrong number.")
+else:
+    print(f"{Number} is not an Armstrong number.")
